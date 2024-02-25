@@ -1,0 +1,4 @@
+Password Update Feature
+Delete users by Admin
+While updating user, if old and new details are same, then message, no values changed
+Change all imports to include full path instead of relative

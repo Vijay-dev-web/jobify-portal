@@ -1,0 +1,30 @@
+export const JOB_STATUS = {
+  PENDING: 'pending',
+  INTERVIEW: 'interview',
+  DECLINED: 'declined'
+};
+
+export const JOB_TYPE = {
+  FULL_TIME: 'full-time',
+  PART_TIME: 'part-time',
+  INTERNSHIP: 'internship'
+}
+
+export const JOB_SORT_BY = {
+  NEWEST_FIRST: 'newest',
+  OLDEST_FIRST: 'oldest',
+  ASCENDING: 'a-z',
+  DESCENDING: 'z-a'
+}
+
+export const USER_ROLES = {
+  USER: 'user',
+  ADMIN: 'admin'
+};
+
+export const JOB_SORTING_OPTIONS = {
+  NEWEST: '-createdAt',
+  OLDEST: 'createdAt',
+  'a-z': 'position',
+  'z-a': '-position'
+};
