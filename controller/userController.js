@@ -3,6 +3,7 @@ import User from "../models/user.js";
 import job from "../models/job.js";
 import cloudinary from "cloudinary";
 import { promises as fs } from "fs";
+import { formatImgae } from "../middleware/multer.js";
 
 export const getCurrentUser = async (req, res) => {
   const currentUser = await User.findOne({ _id: req.user.userId })
@@ -23,8 +24,8 @@ export const getApplicationStats = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   if (req.file) {
-    const cloudData = await cloudinary.v2.uploader.upload(req.file.path);
-    fs.unlink(req.file.path);
+    const file = formatImgae(req.file);
+    const cloudData = await cloudinary.v2.uploader.upload(file);
     req.body.avatar = cloudData.secure_url;
     req.body.avatarPublicId = cloudData.public_id;
   }
